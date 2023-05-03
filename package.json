@@ -1,7 +1,7 @@
 {
-  "name": "module-13-challenge-orm",
+  "name": "e-commerce-back-end",
   "version": "1.0.0",
-  "description": "",
+  "description": "Week 13 Homework Challenge from Northwestern Coding Bootcamp.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,12 +9,8 @@
     "watch": "nodemon server.js",
     "seed": "node seeds/index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git@work.github.com:coding-boot-camp/module-13-challenge-orm.git"
-  },
   "keywords": [],
-  "author": "",
+  "author": "Jessie Galindo",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.3"
