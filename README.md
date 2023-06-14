@@ -14,4 +14,4 @@ I used Node.js, nodemon, Express.js, MySQL2, DotENV, and Sequelize.
 
 ## Credits
 
-See how it works in this [vudeo demonstration](...).
+See how it works in this [video demonstration](...).
