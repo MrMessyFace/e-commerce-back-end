@@ -1,56 +1,56 @@
-const router = require('express').Router();
-const { Tag, Product, ProductTag } = require('../../models');
+const router = require("express").Router();
+const { Tag, Product, ProductTag } = require("../../models");
 
-router.get('/', (req, res) => {
+router.get("/", (req, res) => {
   Tag.findAll({
     include: [
       {
         model: Product,
-        through: ProductTag
-      }
-    ]
+        through: ProductTag,
+      },
+    ],
   })
     .then((tags) => res.status(200).json(tags))
     .catch((err) => res.status(500).json(err));
 });
 
-router.get('/:id', async (req, res) => {
+router.get("/:id", async (req, res) => {
   Tag.findOne({
     where: {
-      id: req.params.id
+      id: req.params.id,
     },
     include: [
       {
         model: Product,
-        through: ProductTag
-      }
-    ]
+        through: ProductTag,
+      },
+    ],
   })
     .then((tag) => res.status(200).json(tag))
     .catch((err) => res.status(404).json(err));
 });
 
-router.post('/', (req, res) => {
+router.post("/", (req, res) => {
   Tag.create(req.body)
     .then((tag) => res.status(200).json(tag))
     .catch((err) => res.status(404).json(err));
 });
 
-router.put('/:id', (req, res) => {
+router.put("/:id", (req, res) => {
   Tag.update(req.body, {
     where: {
-      id: req.params.id
-    }
+      id: req.params.id,
+    },
   })
     .then((tag) => res.status(200).json(tag))
     .catch((err) => res.status(404).json(err));
 });
 
-router.delete('/:id', (req, res) => {
+router.delete("/:id", (req, res) => {
   Tag.destroy({
     where: {
-      id: req.params.id
-    }
+      id: req.params.id,
+    },
   })
     .then((tag) => res.status(200).json(tag))
     .catch((err) => res.status(404).json(err));
